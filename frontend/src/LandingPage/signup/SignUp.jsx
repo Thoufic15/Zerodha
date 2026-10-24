@@ -23,10 +23,10 @@ function SignUp() {
         username,
         password,
       })
-      .then((res) => {
-        setIsSubmitting(false);
-        window.location.href = `https://dashboard-xafm.onrender.com/dashboard?token=${res.data.token}&username=${res.data.username}`;
-      })
+     .then((res) => {
+  setIsSubmitting(false);
+  window.location.href = `https://zerodha-dashboard-uzxz.onrender.com/dashboard?token=${res.data.token}&username=${res.data.username}`;
+})
       .catch((err) => {
         setIsSubmitting(false);
         setError(err.response?.data?.error || "Signup failed");
