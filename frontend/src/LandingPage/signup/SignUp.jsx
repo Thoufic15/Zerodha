@@ -1,6 +1,7 @@
+
 import React, { useState } from "react";
 import axios from "axios";
-import "./signup.css"
+import "./signup.css";
 
 function SignUp() {
   const [username, setUsername] = useState("");
@@ -9,31 +10,34 @@ function SignUp() {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSignup = () => {
-  if (!username || !password) {
-    setError("Please enter both username and password");
-    return;
-  }
+    if (!username || !password) {
+      setError("Please enter both username and password");
+      return;
+    }
 
-  setError("");
-  setIsSubmitting(true);
+    setError("");
+    setIsSubmitting(true);
 
-  axios
-    .post("https://backend-y0wn.onrender.com/signup", { username, password })
-    .then((res) => {
-      setIsSubmitting(false);
-      window.location.href = `https://dashboard-xafm.onrender.com/dashboard?token=${res.data.token}&username=${res.data.username}`;
-    })
-    .catch((err) => {
-      setIsSubmitting(false);
-      setError(err.response?.data?.error || "Signup failed");
-    });
-};
+    axios
+      .post("https://zerodha-backend-r2qw.onrender.com/signup", {
+        username,
+        password,
+      })
+      .then((res) => {
+        setIsSubmitting(false);
+        window.location.href = `https://dashboard-xafm.onrender.com/dashboard?token=${res.data.token}&username=${res.data.username}`;
+      })
+      .catch((err) => {
+        setIsSubmitting(false);
+        setError(err.response?.data?.error || "Signup failed");
+      });
+  };
+
   return (
     <>
       {/* Signup Section */}
       <div className="container py-5">
         <div className="row align-items-center">
-
           {/* Left Image */}
           <div className="col-md-6 text-center">
             <img
@@ -46,13 +50,9 @@ function SignUp() {
 
           {/* Right Signup Form */}
           <div className="col-md-5 offset-md-1">
-
             <h1 className="mb-3">Signup now</h1>
 
-            <p
-              className="text-muted"
-              style={{ fontSize: "18px" }}
-            >
+            <p className="text-muted" style={{ fontSize: "18px" }}>
               Or track your existing application
             </p>
 
@@ -96,10 +96,7 @@ function SignUp() {
               {isSubmitting ? "Signing up..." : "Sign Up"}
             </button>
 
-            <p
-              className="mt-4 text-muted"
-              style={{ fontSize: "13px" }}
-            >
+            <p className="mt-4 text-muted" style={{ fontSize: "13px" }}>
               By proceeding, you agree to the{" "}
               <a href="#" className="text-primary">
                 Zerodha terms
@@ -118,25 +115,19 @@ function SignUp() {
                 Click here
               </a>
             </p>
-
           </div>
         </div>
       </div>
 
-
       {/* Investment Options Section */}
       <div className="container py-5">
-
         <h2 className="text-center mb-5">
           Investment options with Zerodha demat account
         </h2>
 
         <div className="row">
-
-          {/* Stocks */}
           <div className="col-md-6 mb-5">
             <div className="row align-items-center">
-
               <div className="col-4 text-center">
                 <img
                   src="/Media/Images/stocks-acop.svg"
@@ -144,25 +135,19 @@ function SignUp() {
                   className="img-fluid"
                 />
               </div>
-
               <div className="col-8">
                 <h4>Stocks</h4>
-
                 <p className="text-muted">
                   Invest in all exchange-listed
                   <br />
                   securities
                 </p>
               </div>
-
             </div>
           </div>
 
-
-          {/* Mutual Funds */}
           <div className="col-md-6 mb-5">
             <div className="row align-items-center">
-
               <div className="col-4 text-center">
                 <img
                   src="/Media/Images/mf-acop.svg"
@@ -170,25 +155,19 @@ function SignUp() {
                   className="img-fluid"
                 />
               </div>
-
               <div className="col-8">
                 <h4>Mutual funds</h4>
-
                 <p className="text-muted">
                   Invest in commission-free direct
                   <br />
                   mutual funds
                 </p>
               </div>
-
             </div>
           </div>
 
-
-          {/* IPO */}
           <div className="col-md-6 mb-5">
             <div className="row align-items-center">
-
               <div className="col-4 text-center">
                 <img
                   src="/Media/Images/ipo-acop.svg"
@@ -196,25 +175,19 @@ function SignUp() {
                   className="img-fluid"
                 />
               </div>
-
               <div className="col-8">
                 <h4>IPO</h4>
-
                 <p className="text-muted">
                   Apply to the latest IPOs instantly
                   <br />
                   via UPI
                 </p>
               </div>
-
             </div>
           </div>
 
-
-          {/* Futures & Options */}
           <div className="col-md-6 mb-5">
             <div className="row align-items-center">
-
               <div className="col-4 text-center">
                 <img
                   src="/Media/Images/fo-acop.svg"
@@ -222,490 +195,217 @@ function SignUp() {
                   className="img-fluid"
                 />
               </div>
-
               <div className="col-8">
-                <h4>Futures & options</h4>
-
+                <h4>Futures &amp; options</h4>
                 <p className="text-muted">
                   Hedge and mitigate market risk
                   <br />
-                  through simplified F&O trading
+                  through simplified F&amp;O trading
                 </p>
               </div>
-
             </div>
           </div>
-
         </div>
 
-
-        {/* Explore Button */}
         <div className="text-center mt-2">
-
           <button
             className="btn btn-primary btn-lg"
-            style={{
-              width: "247px",
-              fontWeight: "600",
-            }}
+            style={{ width: "247px", fontWeight: "600" }}
           >
             Explore Investments
           </button>
-
         </div>
 
         {/* Steps Section */}
-<div
-  className="container-fluid py-5 mt-5"
-  style={{ backgroundColor: "#fbfbfb" }}
->
-  <div className="container">
+        <div
+          className="container-fluid py-5 mt-5"
+          style={{ backgroundColor: "#fbfbfb" }}
+        >
+          <div className="container">
+            <h2 className="text-center mb-5">
+              Steps to open a demat account with Zerodha
+            </h2>
 
-    <h2 className="text-center mb-5">
-      Steps to open a demat account with Zerodha
-    </h2>
+            <div className="row align-items-center">
+              <div className="col-md-6 text-center">
+                <img
+                  src="/Media/Images/steps-acop.svg"
+                  alt="Steps to open account"
+                  className="img-fluid"
+                  style={{ width: "80%" }}
+                />
+              </div>
 
-    <div className="row align-items-center">
-
-      {/* Left Image */}
-      <div className="col-md-6 text-center">
-        <img
-          src="/Media/Images/steps-acop.svg"
-          alt="Steps to open account"
-          className="img-fluid"
-          style={{ width: "80%" }}
-        />
-      </div>
-
-      {/* Right Steps */}
-      <div className="col-md-5 offset-md-1">
-
-        {/* Step 1 */}
-        <div className="d-flex align-items-center border-bottom py-4">
-          <span
-            className="rounded-circle border d-flex align-items-center justify-content-center me-3"
-            style={{
-              width: "35px",
-              height: "35px",
-              minWidth: "35px",
-              fontSize: "14px",
-            }}
-          >
-            01
-          </span>
-
-          <h4 className="mb-0">
-            Enter the requested details
-          </h4>
-        </div>
-
-        {/* Step 2 */}
-        <div className="d-flex align-items-center border-bottom py-4">
-          <span
-            className="rounded-circle border d-flex align-items-center justify-content-center me-3"
-            style={{
-              width: "35px",
-              height: "35px",
-              minWidth: "35px",
-              fontSize: "14px",
-            }}
-          >
-            02
-          </span>
-
-          <h4 className="mb-0">
-            Complete e-sign & verification
-          </h4>
-        </div>
-
-        {/* Step 3 */}
-        <div className="d-flex align-items-center py-4">
-          <span
-            className="rounded-circle border d-flex align-items-center justify-content-center me-3"
-            style={{
-              width: "35px",
-              height: "35px",
-              minWidth: "35px",
-              fontSize: "14px",
-            }}
-          >
-            03
-          </span>
-
-          <h4 className="mb-0">
-            Start investing!
-          </h4>
-        </div>
-
-      </div>
-    </div>
-  </div>
-</div>
-
-{/* Benefits Section */}
-<div className="container py-5 mt-5">
-
-  <div className="row align-items-center">
-
-    {/* Left Side */}
-    <div className="col-md-6 text-center">
-
-      <img
-        src="/Media/Images/acop-benefits.svg"
-        alt="Benefits"
-        className="img-fluid mb-5"
-        style={{ width: "65%" }}
-      />
-
-      <h2>
-        Benefits of opening a Zerodha demat account
-      </h2>
-
-    </div>
-
-
-    {/* Right Side */}
-    <div className="col-md-6">
-
-      {/* Benefit 1 */}
-      <div className="mb-5">
-
-        <h3>
-          Unbeatable pricing
-        </h3>
-
-        <p className="text-muted fs-5">
-          Zero charges for equity & mutual fund investments.
-          Flat ₹20 fees for intraday and F&O trades.
-        </p>
-
-      </div>
-
-
-      {/* Benefit 2 */}
-      <div className="mb-5">
-
-        <h3>
-          Best investing experience
-        </h3>
-
-        <p className="text-muted fs-5">
-          Simple and intuitive trading platform with an
-          easy-to-understand user interface.
-        </p>
-
-      </div>
-
-
-      {/* Benefit 3 */}
-      <div className="mb-5">
-
-        <h3>
-          No spam or gimmicks
-        </h3>
-
-        <p className="text-muted fs-5">
-          Committed to transparency — no gimmicks, spam,
-          "gamification", or intrusive push notifications.
-        </p>
-
-      </div>
-
-
-      {/* Benefit 4 */}
-      <div className="mb-4">
-
-        <h3>
-          The Zerodha universe
-        </h3>
-
-        <p className="text-muted fs-5">
-          More than just an app — gain free access to the
-          entire ecosystem of our partner products.
-        </p>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</div>
-
-{/* Account Types Section */}
-<div
-  className="container py-5 mt-5"
-  style={{ marginBottom: "50px" }}
->
-  <h2 className="text-center mb-5">
-    Explore different account types
-  </h2>
-
-  <div className="row g-5">
-
-    {/* Individual Account */}
-    <div className="col-md-4">
-      <div
-        className="border rounded p-4"
-        style={{ minHeight: "168px" }}
-      >
-        <div className="d-flex align-items-center">
-
-          <div
-            className="rounded-circle d-flex align-items-center justify-content-center me-3"
-            style={{
-              width: "40px",
-              height: "40px",
-              backgroundColor: "#f0f6ff",
-              color: "#387ed1",
-              fontSize: "20px",
-            }}
-          >
-            <i className="fa-regular fa-user"></i>
+              <div className="col-md-5 offset-md-1">
+                {[
+                  "Enter the requested details",
+                  "Complete e-sign & verification",
+                  "Start investing!",
+                ].map((step, index) => (
+                  <div
+                    key={step}
+                    className={`d-flex align-items-center ${
+                      index < 2 ? "border-bottom" : ""
+                    } py-4`}
+                  >
+                    <span
+                      className="rounded-circle border d-flex align-items-center justify-content-center me-3"
+                      style={{
+                        width: "35px",
+                        height: "35px",
+                        minWidth: "35px",
+                        fontSize: "14px",
+                      }}
+                    >
+                      {`0${index + 1}`}
+                    </span>
+                    <h4 className="mb-0">{step}</h4>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
-
-          <h4 className="mb-0">
-            Individual Account
-          </h4>
-
         </div>
 
-        <p className="mt-4 ms-1 text-muted">
-          Invest in equity, mutual funds and
-          <br />
-          derivatives
-        </p>
-      </div>
-    </div>
+        {/* Benefits Section */}
+        <div className="container py-5 mt-5">
+          <div className="row align-items-center">
+            <div className="col-md-6 text-center">
+              <img
+                src="/Media/Images/acop-benefits.svg"
+                alt="Benefits"
+                className="img-fluid mb-5"
+                style={{ width: "65%" }}
+              />
+              <h2>Benefits of opening a Zerodha demat account</h2>
+            </div>
 
+            <div className="col-md-6">
+              <div className="mb-5">
+                <h3>Unbeatable pricing</h3>
+                <p className="text-muted fs-5">
+                  Zero charges for equity &amp; mutual fund investments. Flat
+                  ₹20 fees for intraday and F&amp;O trades.
+                </p>
+              </div>
 
-    {/* HUF Account */}
-    <div className="col-md-4">
-      <div
-        className="border rounded p-4"
-        style={{ minHeight: "168px" }}
-      >
-        <div className="d-flex align-items-center">
+              <div className="mb-5">
+                <h3>Best investing experience</h3>
+                <p className="text-muted fs-5">
+                  Simple and intuitive trading platform with an
+                  easy-to-understand user interface.
+                </p>
+              </div>
 
-          <div
-            className="rounded-circle d-flex align-items-center justify-content-center me-3"
-            style={{
-              width: "40px",
-              height: "40px",
-              backgroundColor: "#f0f6ff",
-              color: "#387ed1",
-              fontSize: "20px",
-            }}
-          >
-            <i className="fa-solid fa-users"></i>
+              <div className="mb-5">
+                <h3>No spam or gimmicks</h3>
+                <p className="text-muted fs-5">
+                  Committed to transparency — no gimmicks, spam,
+                  "gamification", or intrusive push notifications.
+                </p>
+              </div>
+
+              <div className="mb-4">
+                <h3>The Zerodha universe</h3>
+                <p className="text-muted fs-5">
+                  More than just an app — gain free access to the entire
+                  ecosystem of our partner products.
+                </p>
+              </div>
+            </div>
           </div>
-
-          <h4 className="mb-0">
-            HUF Account
-          </h4>
-
         </div>
 
-        <p className="mt-4 ms-1 text-muted">
-          Make tax-efficient investments for
-          <br />
-          your family
-        </p>
-      </div>
-    </div>
+        {/* Account Types Section */}
+        <div
+          className="container py-5 mt-5"
+          style={{ marginBottom: "50px" }}
+        >
+          <h2 className="text-center mb-5">
+            Explore different account types
+          </h2>
 
-
-    {/* NRI Account */}
-    <div className="col-md-4">
-      <div
-        className="border rounded p-4"
-        style={{ minHeight: "168px" }}
-      >
-        <div className="d-flex align-items-center">
-
-          <div
-            className="rounded-circle d-flex align-items-center justify-content-center me-3"
-            style={{
-              width: "40px",
-              height: "40px",
-              backgroundColor: "#f0f6ff",
-              color: "#387ed1",
-              fontSize: "20px",
-            }}
-          >
-            <i className="fa-solid fa-globe"></i>
+          <div className="row g-5">
+            {[
+              {
+                icon: "fa-regular fa-user",
+                title: "Individual Account",
+                description: "Invest in equity, mutual funds and derivatives",
+              },
+              {
+                icon: "fa-solid fa-users",
+                title: "HUF Account",
+                description: "Make tax-efficient investments for your family",
+              },
+              {
+                icon: "fa-solid fa-globe",
+                title: "NRI Account",
+                description:
+                  "Invest in equity, mutual funds, debentures, and more",
+              },
+              {
+                icon: "fa-regular fa-face-smile",
+                title: "Minor Account",
+                description:
+                  "Teach your little ones about money & invest for their future with them",
+              },
+              {
+                icon: "fa-regular fa-building",
+                title: "Corporate / LLP / Partnership",
+                description:
+                  "Manage your business surplus and investments easily",
+              },
+            ].map((account) => (
+              <div className="col-md-4" key={account.title}>
+                <div
+                  className="border rounded p-4"
+                  style={{ minHeight: "168px" }}
+                >
+                  <div className="d-flex align-items-center">
+                    <div
+                      className="rounded-circle d-flex align-items-center justify-content-center me-3"
+                      style={{
+                        width: "40px",
+                        height: "40px",
+                        backgroundColor: "#f0f6ff",
+                        color: "#387ed1",
+                        fontSize: "20px",
+                      }}
+                    >
+                      <i className={account.icon}></i>
+                    </div>
+                    <h4 className="mb-0">{account.title}</h4>
+                  </div>
+                  <p className="mt-4 ms-1 text-muted">{account.description}</p>
+                </div>
+              </div>
+            ))}
           </div>
-
-          <h4 className="mb-0">
-            NRI Account
-          </h4>
-
         </div>
 
-        <p className="mt-4 ms-1 text-muted">
-          Invest in equity, mutual funds,
-          <br />
-          debentures, and more
-        </p>
-      </div>
-    </div>
-
-
-    {/* Minor Account */}
-    <div className="col-md-4">
-      <div
-        className="border rounded p-4"
-        style={{ minHeight: "168px" }}
-      >
-        <div className="d-flex align-items-center">
-
-          <div
-            className="rounded-circle d-flex align-items-center justify-content-center me-3"
-            style={{
-              width: "40px",
-              height: "40px",
-              backgroundColor: "#f0f6ff",
-              color: "#387ed1",
-              fontSize: "20px",
-            }}
-          >
-            <i className="fa-regular fa-face-smile"></i>
+        {/* FAQ Section */}
+        <div className="container py-5 mt-5">
+          <h2 className="mb-5">FAQs</h2>
+          <div className="faq-list">
+            {[
+              "What is a Zerodha account",
+              "What documents are required to open a demat account?",
+              "Is Zerodha account opening free?",
+              "Are there any AMC (Account Maintenance Charges) for a demat account?",
+              "Can I open a demat account without a bank account?",
+              "What is a Basic Services Demat Account (BSDA)?",
+              "Can I open a demat and trading account using the mobile app?",
+            ].map((question) => (
+              <div className="faq-item" key={question}>
+                <div className="faq-question">
+                  <span>{question}</span>
+                  <span>⌄</span>
+                </div>
+              </div>
+            ))}
           </div>
-
-          <h4 className="mb-0">
-            Minor Account
-          </h4>
-
         </div>
-
-        <p className="mt-4 ms-1 text-muted">
-          Teach your little ones about money
-          <br />
-          & invest for their future with them
-        </p>
       </div>
-    </div>
-
-
-    {/* Corporate Account */}
-    <div className="col-md-4">
-      <div
-        className="border rounded p-4"
-        style={{ minHeight: "168px" }}
-      >
-        <div className="d-flex align-items-center">
-
-          <div
-            className="rounded-circle d-flex align-items-center justify-content-center me-3"
-            style={{
-              width: "40px",
-              height: "40px",
-              backgroundColor: "#f0f6ff",
-              color: "#387ed1",
-              fontSize: "20px",
-            }}
-          >
-            <i className="fa-regular fa-building"></i>
-          </div>
-
-          <h4 className="mb-0">
-            Corporate / LLP / Partnership
-          </h4>
-
-        </div>
-
-        <p className="mt-4 ms-1 text-muted">
-          Manage your business surplus and
-          <br />
-          investments easily
-        </p>
-      </div>
-    </div>
-
-  </div>
-</div>
-
-{/* FAQ Section */}
-<div className="container py-5 mt-5">
-
-  <h2 className="mb-5">
-    FAQs
-  </h2>
-
-  <div className="faq-list">
-
-    {/* FAQ 1 */}
-    <div className="faq-item">
-      <div className="faq-question">
-        <span>What is a Zerodha account</span>
-        <span>⌄</span>
-      </div>
-    </div>
-
-    {/* FAQ 2 */}
-    <div className="faq-item">
-      <div className="faq-question">
-        <span>
-          What documents are required to open a demat account?
-        </span>
-        <span>⌄</span>
-      </div>
-    </div>
-
-    {/* FAQ 3 */}
-    <div className="faq-item">
-      <div className="faq-question">
-        <span>Is Zerodha account opening free?</span>
-        <span>⌄</span>
-      </div>
-    </div>
-
-    {/* FAQ 4 */}
-    <div className="faq-item">
-      <div className="faq-question">
-        <span>
-          Are there any AMC (Account Maintenance Charges) for a demat account?
-        </span>
-        <span>⌄</span>
-      </div>
-    </div>
-
-    {/* FAQ 5 */}
-    <div className="faq-item">
-      <div className="faq-question">
-        <span>
-          Can I open a demat account without a bank account?
-        </span>
-        <span>⌄</span>
-      </div>
-    </div>
-
-    {/* FAQ 6 */}
-    <div className="faq-item">
-      <div className="faq-question">
-        <span>
-          What is a Basic Services Demat Account (BSDA)?
-        </span>
-        <span>⌄</span>
-      </div>
-    </div>
-
-    {/* FAQ 7 */}
-    <div className="faq-item">
-      <div className="faq-question">
-        <span>
-          Can I open a demat and trading account using the mobile app?
-        </span>
-        <span>⌄</span>
-      </div>
-    </div>
-
-  </div>
-
-</div>
-
-      </div>
-     
     </>
   );
 }
