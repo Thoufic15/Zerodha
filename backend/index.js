@@ -16,7 +16,11 @@ const mongoose=require("mongoose");
 const port = process.env.PORT || 8080;
 const url=process.env.MONGO_URL;
 app.use(cors({
-  origin: ["https://zerodha-dtsg.onrender.com", "https://dashboard-xafm.onrender.com"]
+  origin: [
+    "https://zerodha-tb2q.onrender.com",
+    "https://zerodha-dtsg.onrender.com",
+    "https://dashboard-xafm.onrender.com"
+  ]
 }));
 app.use(bodyParser.json());
 mongoose.connect(url)
