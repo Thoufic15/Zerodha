@@ -27,7 +27,7 @@ const BuyActionWindow = ({ uid }) => {
     setError("");
     setIsSubmitting(true);
 
-axios.post("https://backend-y0wn.onrender.com/newOrder", { 
+axios.post("https://zerodha-backend-r2qw.onrender.com/newOrder", { 
          name: uid,
         qty: qty,
         price: price,

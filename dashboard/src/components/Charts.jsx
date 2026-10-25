@@ -9,13 +9,13 @@ const Charts = () => {
   const [allOrders, setAllOrders] = useState([]);
 
  useEffect(() => {
-  axios.get("https://backend-y0wn.onrender.com/allHoldings").then((res) => {
+  axios.get("https://https://zerodha-backend-r2qw.onrender.com/allHoldings").then((res) => {
     setAllHoldings(res.data);
   });
-  axios.get("https://backend-y0wn.onrender.com/allPosition").then((res) => {
+  axios.get("https://https://zerodha-backend-r2qw.onrender.com/allPosition").then((res) => {
     setAllPositions(res.data);
   });
-  axios.get("https://backend-y0wn.onrender.com/allOrders").then((res) => {
+  axios.get("https://https://zerodha-backend-r2qw.onrender.com/allOrders").then((res) => {
     setAllOrders(res.data);
   });
 }, []);
