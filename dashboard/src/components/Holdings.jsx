@@ -1,4 +1,4 @@
-```jsx
+
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import BarChartComponent from "./BarChartComponent";
@@ -98,4 +98,3 @@ const Holdings = () => {
 };
 
 export default Holdings;
-```
