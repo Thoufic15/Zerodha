@@ -11,7 +11,7 @@ const Menu = () => {
  const handleLogout = () => {
   localStorage.removeItem("token");
   localStorage.removeItem("username");
-  window.location.href = "https://zerodha-dtsg.onrender.com/";
+ window.location.href = "https://zerodha-tb2q.onrender.com/";
 };
 
   return (
