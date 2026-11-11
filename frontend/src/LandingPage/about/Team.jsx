@@ -18,18 +18,26 @@ function Team() {
         {/* Left Side - Profile */}
         <div className="col-12 col-md-5 text-center">
 
-          <img
-            src="/Media/Images/thoufic.jpeg"
-            alt="Thoufic Ahamad Mohammad"
-            className="rounded-circle img-fluid"
+          <div
             style={{
-              width: "295px",
-              maxWidth: "70vw",
-              height: "295px",
-              maxHeight: "70vw",
-              objectFit: "cover",
+              width: "250px",
+              height: "250px",
+              borderRadius: "50%",
+              overflow: "hidden",
+              margin: "0 auto",
             }}
-          />
+          >
+            <img
+              src="/Media/Images/thoufic.jpeg"
+              alt="Thoufic Ahamad Mohammad"
+              style={{
+                width: "100%",
+                height: "100%",
+                objectFit: "cover",
+                objectPosition: "center center",
+              }}
+            />
+          </div>
 
           <h4 className="mt-4">
             Thoufic Ahamad Mohammad
@@ -85,7 +93,6 @@ function Team() {
             >
               LinkedIn
             </a>
-          
           </p>
 
         </div>
